@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    options {
-        skipDefaultCheckout(true)
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -14,7 +10,7 @@ pipeline {
 
         stage('Build and Test') {
             steps {
-                bat 'mvn clean test'
+                bat '"C:\\Program Files\\apache-maven-3.9.14\\bin\\mvn" clean test'
             }
         }
     }
